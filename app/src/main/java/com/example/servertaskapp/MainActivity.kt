@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val task = ThreadTaskJson(this)
+        val task = ThreadTaskPostPhp(this)
         task.start()
         // do not use the result of the Thread here
     }
