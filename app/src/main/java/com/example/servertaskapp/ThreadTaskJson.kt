@@ -35,7 +35,7 @@ class ThreadTaskJson (private val activity: MainActivity) : Thread() {
 
     inner class UpdateGui : Runnable {
         override fun run() {
-            activity.updateView(result)
+            activity.updateViewWithJson(result)
         }
     }
 }

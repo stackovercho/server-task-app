@@ -2,7 +2,10 @@ package com.example.servertaskapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
+import org.json.JSONException
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +22,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun updateViewWithJson(json: String) {
-
+        val tv: TextView = findViewById(R.id.tv)
+        var result: String = ""
+        try {
+            val jsonObject = JSONObject(json)
+            val languages = jsonObject.getJSONArray("languages")
+            result = languages.getString(1)
+            tv.text = result
+        } catch (e: JSONException) {
+            Log.d("MainActivity", "JSONException: ${e.message}")
+        }
     }
 
     companion object {
