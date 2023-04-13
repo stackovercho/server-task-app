@@ -3,9 +3,9 @@ package com.example.servertaskapp
 import android.util.Log
 import java.io.InputStream
 import java.net.URL
-import java.util.Scanner
+import java.util.*
 
-class ThreadTaskBasicPhp(private val activity: MainActivity) : Thread() {
+class ThreadTaskJson (private val activity: MainActivity) : Thread() {
     private var result = "not set yet"
     override fun run() {
         super.run()
@@ -16,7 +16,7 @@ class ThreadTaskBasicPhp(private val activity: MainActivity) : Thread() {
         try {
             // connect to server, read data, assign it to result
             // create url
-            val url = URL(MainActivity.URL_PLAIN_TEXT)
+            val url = URL(MainActivity.URL_JSON)
             // get input stream from url
             val iStream: InputStream = url.openStream()
             // read from input stream, accumulate into result
