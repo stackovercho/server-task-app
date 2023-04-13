@@ -5,7 +5,7 @@ import java.io.InputStream
 import java.net.URL
 import java.util.Scanner
 
-class ThreadTaskPlainText(private val activity: MainActivity) : Thread() {
+class ThreadTaskBasicPhp(private val activity: MainActivity) : Thread() {
     private var result = "not set yet"
     override fun run() {
         super.run()

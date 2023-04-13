@@ -8,7 +8,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val task = ThreadTaskPlainText(this)
+        val task = ThreadTaskBasicPhp(this)
         task.start()
         // do not use the result of the Thread here
     }
@@ -20,5 +20,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val URL_PLAIN_TEXT: String = "https://cmsc436-2301.cs.umd.edu/test.txt"
+        const val  URL_BASIC_PHP = "https://cmsc436-2301.cs.umd.edu/test.php"
     }
 }
